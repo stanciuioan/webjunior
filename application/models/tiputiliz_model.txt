@@ -1,0 +1,15 @@
+<?php
+class Categorii_model extends CI_Model {
+	
+	public function __construct()
+	{
+		parent::__construct();
+	}
+	
+	public function lista_categorii()
+	{
+				$this->db->order_by("dengrupv", "asc");	
+                $query = $this->db->get('grupv');			
+                return $query->result();	
+	}
+}
